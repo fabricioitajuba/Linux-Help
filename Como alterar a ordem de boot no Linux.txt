@@ -1,6 +1,7 @@
 ### Como alterar a ordem de boot no Linux
 fonte:
 https://www.youtube.com/watch?v=S-ADA5D_YeM&list=LLzsFV0MVegLv2llnQtE-fTA&index=5&t=19s
+https://www.youtube.com/watch?v=_AAi8MbyjkE&list=LLzsFV0MVegLv2llnQtE-fTA&index=4&t=0s
 
 
 - No momento da inicialização, na hora que entrar o GRUB, enumere cada opção de cima
