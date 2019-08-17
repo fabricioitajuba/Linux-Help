@@ -1,0 +1,62 @@
+### Como alterar a ordem de boot no Linux
+fonte:
+https://www.youtube.com/watch?v=S-ADA5D_YeM&list=LLzsFV0MVegLv2llnQtE-fTA&index=5&t=19s
+
+
+- No momento da inicialização, na hora que entrar o GRUB, enumere cada opção de cima
+para baixo começando do "0" (anotando em um papel).
+
+Ex:
+
+Linux Deepin ...
+Opções avançadas para Linux Deepin ...
+Linux Ubuntu ...
+Opções avançadas para Linux Ubuntu ...
+Windows 10 ...
+
+para
+
+0 - Linux Deepin ...
+1 - Opções avançadas para Linux Deepin ...
+2 - Linux Ubuntu ...
+3 - Opções avançadas para Linux Ubuntu ...
+4 - Windows 10 ...
+
+
+- Inicie com o linux que está gerenciando o GRUB para ter acesso ao mesmo.
+
+- Depois de iniciar, edite o seguinte arquivo:
+
+$sudo nano /etc/default/grub (entre com a senha)
+
+Na linha:
+GRUB_DEFAULT="0"
+
+Altera o número "0" para o número correspondente ao sitema anotado:
+
+Ex:
+GRUB_DEFAULT="2" (para iniciar com o ubuntu)
+
+- Se quiser alterar o tempo de espera de escolha do sistema, altere a seguinte linha:
+GRUB_TIMEOUT="5"
+
+"5" corresponde a 5 segundos de espera
+
+Ex:
+GRUB_TIMEOUT="10" (para 10 segundos)
+
+Salve e feche o arquivo
+
+- Digite o comando:
+$ sudo update-grub (para atualizar o GRUB)
+
+Ao iniciar o computador, entrará o sistema selecionado.
+
+
+
+### Se quiser utilizar um programa gráfico, basta instalar o "Grub Customizer"
+
+$ sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+$ sudo apt-get update
+$ sudo apt-get install grub-customizer
+
