@@ -1,0 +1,18 @@
+Para rodar um programa ou um script logo na inicialização de um sistema GNU/Linux Debian (com ou sem interface gráfica), basta adicionar uma entrada no arquivo:
+
+ /etc/rc.local
+
+Ex. 
+
+/caminho/do/programa
+exit 0
+
+
+- Abri o terminal
+- Entrei como Root ( comando: # su )
+- Depois abri o "rc.local" pelo "nano" ( comando: # nano /etc/rc.local )
+- Adicionei ( comando: # /opt/lampp/lampp start ) antes do "exit 0"
+- Salvei com "ctrl+O"
+- Pressionei "Enter" para salvar com o mesmo nome
+- Saí do "nano" com "ctrl+x"
+- Reiniciei o PC

@@ -1,0 +1,88 @@
+Capítulo 7 | Permissão e Propriedade
+
+- 7.1 Permissão e Propriedade
+
+O Linux herdou o conceito de permissão e propriedade de arquivos utilizando no UNIX. Os sistemas UNIX supõem que a máquina pode ser compartilhada por diferentes usuários, por este motivo é necessário atribuir posse e
+permissões diferentes para cada usuário do sistema. Cada arquivo possui então um dono e permissões diferenciadas
+para quem é o dono e quem não é. Para verificar estas características em um arquivo, você pode usar o comando ls
+conforme o exemplo na Listagem 7.1.
+
+--Listagem 7.1: Listando o Proprietário e as Permissões dos Arquivos
+
+$ ls -l
+-rw-rw-r-- 1 bob users 375600 Dez  5 14:30 myfile
+
+O arquivo que foi listado no exemplo na Listagem 7.1 pertence ao usuário bob. Este, por sua vez, está no grupo
+de usuários chamado users. 
+
+As permissões do arquivo estão listadas no código -rw-rw-r-. 
+
+O primeiro traço à esquerda significa que este é um arquivo normal contendo qualquer tipo de dados. Um diretório teria um d ao invés do traço -. 
+
+Os próximos 9 caracteres são as permissões do arquivo. 
+
+Os 3 primeiros dizem quais são as permissões do usuário dono do arquivo. Os próximos 3 dizem quais são as permissões que os usuários do grupo possuem sobre o arquivo. 
+
+Por fim, os 3 últimos caracteres dizem quais são as permissões para qualquer outra pessoa. Cada grupo de 3 caracteres versa sobre as permissões de leitura (r, read), escrita (w, write) e execução (x, execute) do arquivo, nesta ordem. 
+
+O arquivo ilustrado na Listagem 7.1 possui permissão de leitura e escrita para o usuário bob e os membros do grupo users, os demais usuários possuem permissão apenas de leitura. Cada umas das permissões é binária (tem permissão ou não tem), desta forma cada conjunto de permissão expresso pelos 3 caracteres pode ser representado por um número binário com 3 bits. Desta forma, temos o seguinte:
+
+--- (000) 2 = 0 todas permissões negadas
+--x (001) 2 = 1 permissão apenas de execução
+-w- (010) 2 = 2 permissão apenas de escrita
+-wx (011) 2 = 3 permissão para escrita e execução
+r-- (100) 2 = 4 permissão para leitura
+r-x (101) 2 = 5 permissão para leitura e execução
+rw- (110) 2 = 6 permissão para leitura e escrita
+rwx (111) 2 = 7 permissão para leitura, escrita e execução
+
+Podemos trocar o dono de um arquivo, assim como as permissões. Para tanto utilizaremos os comandos chown
+e chmod, respectivamente.
+
+--Listagem 7.2: Trocando o Dono de um Arquivo
+
+$ chown john:users2 myfile
+$ ls -l myfile
+-rw-rw-r-- 1 john users2 375600 Dez  5 14:30 myfile
+
+--Listagem 7.3: Trocando as Permissões de um Arquivo
+
+$ chmod 777 myfile
+$ ls -l myfile
+-rwxrwxrwx 1 john users2 375600  Dez 5 14:30 myfile
+$ chmod 600 myfile
+$ ls -l myfile
+-rw------- 1 john users2 375600  Dez 5 14:30 myfile
+
+
+Podemos também mudar as permissões utilizando as representações simbólicas:
+
+u - para o usuário
+g - para o grupo
+o - para outros
+a - para todos
+
+r - permissão de leitura
+w - permissão de escrita
+x - permissão de execução
+
+Os seguintes exemplos na Listagem 7.4 ilustram algumas possíveis utilizações desteas representações para alterar as permissões de um arquivo ou diretório.
+
+--Listagem 7.4: Exemplos de Utilização do chmod
+
+# adicionar a permissao de execucao apenas ao usuario
+$ chmod u+x arquivo
+
+# adicionar multiplas permissoes (por exemplo, leitura e execucao)
+$ chmod u+rx arquivo
+
+# adicionar permissoes diferentes a usuario (permissao de leitura) e (permissao de grupo)
+	grupo
+$ chmod u+r,g+x arquivo
+
+# remover permissoes (leitura e execucao)
+$ chmod u-rx
+
+# adicionar a permissao de execucao a todos os usuarios
+$ chmod a+x
+

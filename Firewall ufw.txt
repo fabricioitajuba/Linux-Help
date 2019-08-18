@@ -1,0 +1,83 @@
+Firewall - UFW
+
+- Verificar se o firewall está ativo e instalado na máquina:
+sudo ufw status
+
+- Instalar o firewall:
+sudo apt-get install ufw -y
+
+- Ativar e habilitar o firewall:
+sudo ufw enable
+
+- Desativar o firewall:
+sudo ufw disable
+
+- Verificar o estado do firewall e as regras criadas numeradas:
+sudo ufw status numbered
+
+- As regras ficam guardadas em arquivos no diretório: etc/ufw nos arquivos com extensão .rules
+
+Quando o firewall destá ativado sem nenhuma regra, nada pode se conectar ao computador
+
+O firewall trabalha com as seguintes regras:
+Regras de entrada: mundo exterior → computador
+Regras de saída: computador → mundo exterior
+
+- Saber os serviços e portas utilizadas:
+less /etc/services
+
+Regras básicas:
+
+- Permitir a entrada do serviço ex SSH para tcp/udp:
+sudo ufw allow 22 
+ou
+sudo ufw allow ssh
+
+- Permitir a entrada do serviço ex SSH para tcp:
+sudo ufw allow 22/tcp
+ou
+sudo ufw allow ssh/tcp
+
+- Excluir uma regra:
+sudo ufw delete “número ou o nome da regra”
+
+- Bloquear a entrada do serviço ex SSH para tcp/udp:
+sudo ufw allow 22
+
+- Bloquear a saída do serviço http (bloquear o acesso de páginas):
+sudo ufw deny out 80
+
+
+Regras intermediárias:
+
+- Permitir o acesso de apenas um IP específico no computador:
+sudo ufw allow from “IP do computador que irá acessar”
+
+- Permitir que apenas os computadores que estão na rede local tenham acesso ao meu computador (tráfico por sub-rede):
+sudo ufw allow from “ip da rede/máscara da rede”
+
+ex: sudo ufw allow from 192.168.0.0/24
+
+- Não permitir que os computadores que estão na rede local tenham acesso ao meu computador (tráfico por sub-rede):
+sudo ufw deny from “ip da rede/máscara da rede”
+
+ex: sudo ufw deny from 192.168.0.0/24
+
+- Permitir a entrada de um ip específico em uma porta específica e qualquer protocolo (tcp e udp):
+sudo ufw allow from “ip” to any port “porta”
+
+Ex: IP=192.168.0.4 e Porta=22
+
+sudo ufw allow from 192.168.0.4 to any port 22
+
+- Permitir a entrada de um ip específico em uma porta específica e um protocolo específico (tcp ou udp):
+sudo ufw allow from “ip” to any port “porta” proto “protocolo”
+
+Ex: IP=192.168.0.4 e Porta=22 e Protocolo=tcp
+
+sudo ufw allow from 192.168.0.4 to any port 22 proto tcp
+- Bloquear o serviço ssh para dois ip’s da rede e permitir o serviço para os demais ip’s da minha rede via tpc apenas:
+sudo ufw deny from 192.168.1.10 to any port 22
+sudo ufw deny from 192.168.1.20 to any port 22
+sudo ufw allow from 192.168.1.0/24 to any port 22 proto tcp
+– As primeiras regras é as que são válidas

@@ -1,0 +1,27 @@
+Procurando em arquivo texto
+
+Ex:
+- Arquivo cidades.txt contendo os seguintes dados:
+SP Sao Paulo
+SP Campinas
+MG Belo Horizonte
+MG Diamantina
+MG Lavras
+MG Bom Sucesso
+RJ Rio de Janeiro
+
+Ex1 - Achar em qual linha está a palavra "Lavras"
+
+- Achando o nũmero da linha:
+$ cat -n cidades.txt | grep Lavras
+	5  MG Lavras
+
+Ex2 - Achar em quais linhas estão a palavra "SP"
+
+- Achando o nũmero da linha:
+$ cat -n cidades.txt | grep SP
+	1  SP Sao Paulo
+	2  SP Campinas
+
+- Abrir o editor nano mostrando o número de linha:
+$ nano -c cidades.txt

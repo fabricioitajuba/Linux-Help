@@ -1,0 +1,58 @@
+- para instalar o pacote ssh:
+$ sudo apt-get install openssh-server
+$ sudo apt-get install openssh-client
+
+- para conectar:
+$ ssh -l "nome do host" "ip"
+
+ex: $ ssh -l fabricio 192.168.0.2
+
+- copiar arquivo
+scp "arquivo" "usuário da máquina destino"@"ip ou dns da máquina destino":"local para onde irá o arquivo"
+
+
+ex: scp server.crt fabricio@192.168.0.3:/fabricio
+
+CÓPIA DE ARQUIVOS POR SSH
+  
+Se você já se deparou com um problema para copiar arquivos remotamente, aí vai uma dica. O segredo é o SCP (cópia por ssh). 
+
+Você esta conectado a uma máquina X remotamente, quer copiar um arquivo para sua máquina: 
+
+scp <nome_do_arq> <ip_do_destino>:/home/arquivos 
+
+Onde:
+<nome_do_arq> = nome do arquivo a ser copiado;
+<ip_do_destino> = nome da máquina de destino do arquivo;
+/home/arquivos = diretório para onde o arquivo vai ser copiado (esse diretório é o da sua máquina).
+
+Para copiar um diretório inteiro você pode usar o parâmetro " -r ". 
+
+Exemplo: 
+
+scp -r <nome_do_dir> <ip_do_destino>:/home/arquivos
+
+
+
+Pode utilizar compactação também para copiar por scp, se a sua rede for lenta ou estiver fazendo cópia de um servidor remoto.
+
+Para copiar um arquivo de um host remoto
+#scp -C usuario@ip:/arquivoOrigem arquivoDestino
+Para copiar um arquivo para um host remoto
+#scp -C arquivoOrigem usuario@ip:/arquivoDestino
+
+
+Removendo o "ssh"
+
+1)Para o serviço do ssh
+# /etc/init.d/ssh stop
+
+2) Verificar pacotes dependentes.
+# dpkg -s ssh
+*Na linha "Depends:" Verificar o pacotes ao qual o ssh possui dependência.
+
+3)Remover e limpar o ssh e todos os seus pacotes dependentes.
+# apt-get remove --purge ssh openssh-client openssh-server
+
+4) Caso necessário, pode-se ainda fazer uma limpeza dos pacotes que não está mais sendo mais utilizados.
+# apt-get autoremove

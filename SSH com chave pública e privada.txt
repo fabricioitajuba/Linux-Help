@@ -1,0 +1,72 @@
+chave privada - fica no cliente
+chave pública - fica no servidor
+passphrase - 
+
+neste exemplo o ip do servidor é 192.168.0.100
+
+somente o autenticador é enviado para o servidor
+
+conectando via ssh sem senha no modo verbose
+
+$ ssh -vl fabricio 192.168.0.100
+
+Gerando o par de senhas, pública e privada "ssh-keygen"
+
+- na máquina cliente
+
+$ ssh-keygen -t rsa 
+
+- pressione <enter> caso queira usar o arquivo padrão ou digite um nome;
+- entre com a passphrase "nome ou frase qualquer" ex: "amigosdocaio"
+- digite novamente a passphrase ex: "amigosdocaio"
+
+os arquivos id_rsa (chave privada) e id_rsa.pub (chave pública) foram criados na pasta .ssh
+
+o arquivo id_rsa.pub deve ser enviado para o servidor por e-mail ou pendrive ou ssh, etc...
+
+Instalando a chave pública no servidor
+
+- copiando a chave pública para o servidor (pasta home) usando o próprio ssh
+
+- no cliente
+
+- entre na pasta .ssh "cd .ssh"
+
+$ scp id_rsa.pub fabricio@192.168.0.100:
+-entre com a senha
+
+- logar no servidor usando o login normal (o ideal é levar a chave privada no servidor através de um pendrive, logar e instalar a chave pessoalmente para maior sergurança)
+
+$ ssh -l fabricio 192.168.0.100
+
+- no servidor, entre na pasta home ~$:
+- verifique se o arquivo id_dsa.pub está presente através do comando ls;
+
+Verifique se existe a pasta .ssh, caso não exista, crie e atribua as seguintes permissões:
+
+- crie a pasta .ssh
+mkdir .ssh
+
+- entre na pasta e crie o arquivo authorized_keys
+cd .ssh
+nano authorized_keys
+salve e feche o arquivo
+
+cd ..
+- altere as permissões da pasta
+chmod 700 .ssh/
+
+- altera as permissões do arquivo
+chmod 600 .ssh/authorized_keys
+
+- digite:
+~$ cat id_rsa.pub >> /home/fabricio/.ssh/authorized_keys
+
+- para saber se a chave foi copiada, entre na pasta .ssh e digite:
+~$ cat authorized_keys
+
+logando ao servidor utilizando as chaves
+
+- no cliente:
+$ ssh -l fabricio 192.168.0.100
+

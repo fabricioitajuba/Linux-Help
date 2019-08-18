@@ -1,0 +1,35 @@
+Como Criar Pastas Personalizadas de Apps no Menu do GNOME Shell
+
+Trata-se de um aplicativo para criar pastas no menu de aplicativos do Gnome.
+
+O GNOME Shell suporta agrupamento de aplicações em pastas de aplicativos, e há duas dessas pastas predefinidas, a “Utilitáros” e a “Diversos”. Alguns podem não saber como criar pastas de aplicativos personalizados, por isso aqui estão duas maneiras de conseguir isso.
+
+utilitarios diversos
+
+Método 1 – Usando o GNOME AppFolders Manager
+O GNOME AppFolders Manager é uma ferramenta para criar e editar pastas de aplicativos no GNOME Shell.
+
+A aplicação é bastante fácil de usar – na seção à esquerda, você pode criar, apagar ou editar pastas de aplicativos, enquanto no lado direito você pode adicionar (ou remover) aplicações para pastas de Apps.
+
+## Instalação do Gnome App Folder Manager
+
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt update
+sudo apt install gnome-appfolders-manager
+
+
+## Usando o Gnome App Folder Manager
+
+1 – Abra o App Folder Manager
+app folder
+
+2 – Clique em Adicionar Pasta e defina o nome
+novo app folder
+
+3 – Selecione os apps que deseja adicionar à pasta
+app folder add apps
+
+4 – Clique em salvar e pronto.
+
+Visualize e abra sua nova pasta no menu
+

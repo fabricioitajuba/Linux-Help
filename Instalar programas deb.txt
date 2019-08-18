@@ -1,0 +1,16 @@
+- Para instalar um arquivo .deb:
+
+$ sudo dpkg -i package_file.deb
+
+
+
+- Para desinstalar um arquivo .deb:
+
+$ sudo apt-get remove nome_do_pacote
+
+
+
+- Converter arquivo .rpm em arquivos .deb
+:
+$ sudo alien package_file.rpm
+

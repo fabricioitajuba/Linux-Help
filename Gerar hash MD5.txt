@@ -1,0 +1,16 @@
+Gerar hash MD5 no Linux
+
+echo -n texto | md5sum
+
+ex:
+
+echo -n Laranja | md5sum
+
+
+ou
+
+md5sum arquivo_texto
+
+ex:
+
+md5sum arq_teste
