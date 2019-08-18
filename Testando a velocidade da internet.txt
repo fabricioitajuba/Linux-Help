@@ -1,0 +1,8 @@
+Vídeo explicativo: Como testar a velocidade da Internet no Linux
+
+
+# wget https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py -O speedtest-cli
+# chmod +x speedtest-cli
+# mv speedtest-cli /usr/local/bin/
+# speedtest-cli --share
+

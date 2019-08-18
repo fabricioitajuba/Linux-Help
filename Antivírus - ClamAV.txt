@@ -1,0 +1,11 @@
+- Instalar o programa
+$sudo apt-get install clamav
+
+- Instalar as definições de vírus
+$sudo freshclam
+
+- Instalar a interface gráfica
+$ sudo apt-get install clamtk
+
+- Para escanear pasta de forma recursiva
+$clamscan -r /home/fabricio

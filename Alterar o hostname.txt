@@ -1,0 +1,24 @@
+- Para saber o atual hostname:
+# hostname
+
+Alterando o hostname
+
+Edite o arquivo:
+# nano /etc/hostname
+Altere o nome atual para o novo nome, salve e saia do arquivo.
+
+Edite o arquivo:
+# nano /etc/hosts
+
+Na linha:
+127.0.0.1	"nome anterio"
+
+Altere para o novo nome.
+127.0.0.1	"novo nome"
+
+salve e saia do arquivo
+
+Reinicie o sistema através do comando
+#reboot
+
+

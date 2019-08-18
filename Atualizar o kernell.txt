@@ -1,0 +1,14 @@
+Verificar a versão do kernell
+
+# uname -a
+Linux servidor 4.9.0-4-686-pae #1 SMP Debian 4.9.65-3+deb9u1 (2017-12-23) i686 GNU/Linux
+
+# apt-get update
+# apt-get full-upgrade
+
+Reinicie o computador:
+# reboot
+
+# uname -a
+Linux servidor 4.9.0-5-686-pae #1 SMP Debian 4.9.65-3+deb9u2 (2018-01-04) i686 GNU/Linux
+

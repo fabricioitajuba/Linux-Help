@@ -1,0 +1,36 @@
+﻿- Instalar aplicativo:
+$ sudo apt-get install "nome do programa"
+
+- Desinstalar aplicativo:
+$ sudo apt-get remove "nome do programa"
+
+- Verificar se existe atualizações de repositórios do sistema:
+$ sudo apt-get update
+
+- Instalar as atualizações de repositórios do sitema:
+$ sudo apt-get upgrade
+
+- Limpar arquivos obsoletos:
+$ sudo apt-get autoremove
+
+- Limpar o "cash" do apt:
+$ sudo apt-get autoclean
+
+- Manipular pacotes quebrados:
+$ sudo apt-get install -f
+
+- Listar todos os programas instalados no Ubuntu:
+$ sudo dpkg -l
+
+- Se você preferir gravá-los em um arquivo de texto:
+$ cd ~
+$ sudo dpkg -l > lista.txt
+
+- Ler a lista detalhada de todos os programas instalados:
+$ nano lista.txt
+
+- Habilitar permissões em pasta:
+$sudo su (senha)
+
+Ex:
+$chmod 777 /var/www

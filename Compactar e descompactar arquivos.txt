@@ -1,0 +1,122 @@
+#### tar somente junta os arquivos sem serem compactados
+
+- Para juntar
+$ tar-cf "nome do arquivo a ser juntado".tar "arquivo1" ... "arquivon"
+
+- Para separar
+$ tar -xf arq.tar
+
+- Para ver o conteúdo do arquivo tar
+$ tar -tf arq.tar
+
+### tar+gzip
+
+- Criar tar compactado:
+$ tar-cvzf "nome do arquivo a ser compactado".tar.gz "arquivo1" ... "arquivon"
+
+- Extrair tar descompactado:
+$ tar -xzvf "nome do arquivo a ser descompactado".tar.gz
+
+
+#### tar+bzip2
+
+- Criar tar compactado:
+$ tar -cvjf "nome do arquivo a ser compactado".tar.bz2 "arquivo1" ... "arquivon"
+
+- Extrair tar compactado:
+$ tar -xjvf "nome do arquivo a ser descompactado".tar.bz2
+
+
+#### tar+xz
+
+- Criar tar compactado:
+$ tar -cjf "nome do arquivo a ser compactado".tar.xz "arquivo1" ... "arquivon"
+
+- Extrair tar compactado:
+$ tar -xjf pacote.tar.xz
+
+
+
+#### Compactar e descompactar arquivos zip, rar, tar.gz, bz2, tar, tar.bz2 pelo terminal
+
+Posted by dodilei on 31st outubro 2011 in Linux with 0 comments
+
+Se você usa Linux independente da distribuição, uma tarefa muito comum é a compactar e descompactar arquivos, que muitas vezes é necessário que seja feita pela linha de comando. #sysadminfeelins
+A proposta desse tutorial não é conhecermos a fundo sobre compactação, mas aprender os comandos simples que precisamos no dia-a-dia. Fica como uma recordação pra quem precisa e que nem sempre consegue decorar.[/quote]
+
+OBS: É necessário estar no local onde estão os arquivos ou o diretório a serem compactados.
+
+Legenda:
+
+    nome_do_arquivo = É o nome que você quiser dar ao arquivo compactado.
+    arquivo_a_ser_compactado = É o arquivo ou pasta ao qual se deseja compactar.
+
+Para COMPACTAR:
+
+zip:
+
+zip nome_do_arquivo.zip arquivo_a_ser_compactado
+
+rar:
+
+rar a nome_do_arquivo.rar arquivo_a_ser_compactado
+
+tar:
+
+tar -cf nome_arquivo.tar arquivo_a_ser_compactado
+
+tar.gz:
+
+tar -cf nome_arquivo.tar arquivo_a_ser_compactado
+gzip -9 nome_arquivo.tar
+
+bz2:
+
+bzip2 nome_do_arquivo.bz2
+
+tar.bz2:
+
+tar -jxvf nome_do_arquivo.tar.bz2
+
+     Para se compactar mais de um arquivo por vez, basta acrescentar a lista mais arquivos. EX:  tar -cf nome_arquivo.tar arquivo_a_ser_compactado1 arquivo_a_ser_compactado2 arquivo_a_ser_compactado3
+
+Para DESCOMPACTAR:
+
+zip:
+
+unzip nome_do_arquivo.zip
+
+rar:
+
+unrar x nome_do_arquivo.rar
+
+tar:
+
+tar -xvf nome_do_arquivo.tar
+
+tar.gz:
+
+tar -vzxf nome_do_arquivo.tar.gz
+
+bz2:
+
+bunzip nome_do_arquivo.bz2
+
+tar.bz2:
+
+tar -jxvf nome_do_arquivo.tar.bz2
+
+Lista de parâmetros que podem ser usados:
+
+-c – cria um novo arquivo tar;
+-M – cria, lista ou extrai um arquivo multivolume;
+-p – mantém as permissões originais do(s) arquivo(s);
+-r – acrescenta arquivos a um arquivo tar;
+-t – exibe o conteúdo de um arquivo tar;
+-v – exibe detalhes da operação;
+-w – pede confirmação antes de cada ação;
+-x – extrai arquivos de um arquivo tar;
+-z – comprime ou extrai arquivos tar resultante com o gzip;
+-j – comprime ou extrai arquivos tar resultante com o bz2;
+-f – especifica o arquivo tar a ser usado;
+-C – especifica o diretório dos arquivos a serem armazenados.

@@ -1,0 +1,30 @@
+Compilador C
+
+- para instalar:
+$ sudo apt install gcc
+
+- edite o programa:
+
+$ nano teste.c
+
+// digite o código abaixo
+#include <stdio.h>
+
+int main()
+{
+	printf("Hello world\n");
+	return 0;
+}
+
+- para compilar:
+
+$ gcc -c teste.c
+$ gcc -o teste teste.o
+
+- para executar:
+
+$ ./teste
+
+- para executar em segundo plano:
+
+$ ./teste &

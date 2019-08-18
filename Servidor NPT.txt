@@ -1,0 +1,182 @@
+﻿Vantagem, a hora do servidor local é sempre atualizada pela hora de um servidor npt.
+
+
+
+OBS: permitir acesso a porta 123 UDP
+
+
+
+- instalar o servidor:
+
+
+~# apt-get install ntp
+
+
+
+- configuar quais servidores ntp e quais máquinas podem atualizar:
+
+
+# nano /etc/ntp.conf
+
+
+
+pool 0.debian.pool.ntp.org iburst
+
+pool 1.debian.pool.ntp.org iburst
+
+pool 2.debian.pool.ntp.org iburst
+
+pool 3.debian.pool.ntp.org iburst
+
+
+
+são os servidores do ubuntu ou debian, podendo ser incluido novos.
+
+
+
+- nas linhas:
+
+
+
+# Local users may interrogate the ntp server more closely.
+
+restrict 127.0.0.1
+
+restrict ::1
+
+
+
+-> configura quais máquinas podem acessar o servidor:
+
+
+
+ex: para permitir apenas a rede 192.168.100.0
+
+
+
+# Local users may interrogate the ntp server more closely.
+
+restrict 127.0.0.1
+
+restrict ::1
+
+restrict 192.168.0.0 mask 255.255.255.
+
+0
+
+para reiniciar:
+
+# /etc/init.d/ ntp restart
+
+
+
+para saber se está roando
+
+# ntpq -p
+
+
+
+para saber a data e hora atualizados:
+
+
+# date
+
+
+
+
+
+------- clientes NPT
+
+
+na máquina cliente, instalar o seguinte programa:
+
+#  apt-get install ntpdate
+
+
+
+para atualizar data e hora:
+
+# ntpdate "ip ou domínio do servidor"
+
+
+
+ex: se quiser atualizar a hora de um outro servidor fora da rede:
+
+
+# ntpdate ntp.cais.rpn.br
+
+
+
+Servidores 
+NTP.br
+
+a.st1.ntp.br	200.160.7.186 e 2001:12ff:0:7::186
+
+b.st1.ntp.br	201.49.148.135
+
+c.st1.ntp.br	200.186.125.195
+
+d.st1.ntp.br	200.192.232.8
+
+
+a.ntp.br	200.160.0.8 e 2001:12ff::8
+
+b.ntp.br	200.189.40.8
+
+c.ntp.br	200.192.232.8
+
+gps.ntp.br	200.160.7.193 e 2001:12ff:0:7::193
+
+
+
+
+para atualizar sempre de maneira automática:
+
+
+
+- editar o arquivo
+
+#nano /etc/systemd/timesyncd.conf
+
+
+
+[Time]
+
+#NTP=
+
+#FallbackNTP=ntp.ubuntu.com
+
+
+
+descomente as linhas e na linha 
+#NTP=, colocar o endereço do servidor ntp. 
+
+ex:
+
+
+
+[Time]
+
+NTP=192.168.0.2
+
+FallbackNTP=ntp.ubuntu.com
+
+
+
+Salve e saia do arquivo.
+
+para reiniciar o serviço digite:
+
+
+# timedatectl set-ntp true
+
+
+
+para saber se está rodando normalmente:
+
+
+#timedatectl status
+
+
+
+no lugar do ntp.ubuntu.com pode colocar o ntp.cais.rpn.br
