@@ -1,0 +1,49 @@
+### Como utilizar o comando wget
+
+fonte:
+https://www.youtube.com/watch?v=-1v1Qy_lXks
+
+documentação:
+http://www.gnu.org/software/wget/
+
+Este comando permite fazer download pelo terminal. 
+
+- A maneira mais simples:
+$ wget "endereço do do arquivo"
+
+- Ex:
+$ wget http://ubuntu.c3sl.ufpr.br/releases/18.04.3/ubuntu-18.04.3-live-server-amd64.iso
+
+- Fazendo download com opçao de continuar de onde parou caso ocorra a perda de conexão:
+$ wget -c http://ubuntu.c3sl.ufpr.br/releases/18.04.3/ubuntu-18.04.3-live-server-amd64.iso
+
+- Fazendo download e salvando com outro nome:
+$ wget -c http://ubuntu.c3sl.ufpr.br/releases/18.04.3/ubuntu-18.04.3-live-server-amd64.iso -O teste.iso
+
+- Fazendo download e salvando com outro nome em outra pasta:
+$ wget -c http://ubuntu.c3sl.ufpr.br/releases/18.04.3/ubuntu-18.04.3-live-server-amd64.iso -P /home/Downloads/teste.iso
+
+- Fazendo download com controle de banda (ex em 100k):
+$ wget --limit-rate=100k http://ubuntu.c3sl.ufpr.br/releases/18.04.3/ubuntu-18.04.3-live-server-amd64.iso
+
+- Fazendo download com controle de banda (ex em 100k) com opção de continuar o download caso perca a conexão:
+$ wget -c --limit-rate=100k http://ubuntu.c3sl.ufpr.br/releases/18.04.3/ubuntu-18.04.3-live-server-amd64.iso
+
+- Fazendo download com opçao de continuar de onde parou caso ocorra a perda de conexão em segundo plano:
+$ wget -c -b http://ubuntu.c3sl.ufpr.br/releases/18.04.3/ubuntu-18.04.3-live-server-amd64.iso
+
+caso queira acompanhar o processo:
+$ tail -f wget-log
+
+caso queira parar o download:
+
+-descubra o número do processo:
+$ ps -U fabricio | grep wget
+
+-Ex retornado:
+ 3963 ?       00:00:00 wget
+
+-mate o processo:
+$ kill -9 3963
+
+onde 3963 foi o número do processo achado.
