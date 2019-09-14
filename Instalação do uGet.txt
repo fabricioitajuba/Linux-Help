@@ -1,0 +1,51 @@
+--- Para instalar:
+
+Passo 1. Abra um terminal (Usando o Dash/Atividades ou pressionando as teclas CTRL+ALT+T);
+
+Passo 2. Se ainda não tiver, adicione o repositório do programa com este comando ou use esse tutorial;
+
+$ sudo add-apt-repository ppa:plushuang-tw/uget-stable
+
+Passo 3. Atualize o APT com o comando:
+
+$ sudo apt-get update
+
+Passo 4. Agora instale o programa com o comando:
+
+$ sudo apt-get install uget aria2
+
+--- Para desinstalar:
+
+Passo 1. Abra um terminal;
+
+Passo 2. Desinstale o programa, usando os comandos abaixo;
+
+$ sudo add-apt-repository ppa:plushuang-tw/uget-stable -r -y 
+$ sudo apt-get remove uget aria2 --auto-remove
+
+--- Integração do uGet com o navegador:
+
+Passo 1. Abra o navegador Chrome e instale a extensão de integração com uGet, acessando esse link:
+
+Passo 2. Abra um terminal (use as teclas CTRL + ALT + T);
+
+Passo 3. Se ainda não tiver, adicione o repositório do programa com este comando ou use esse tutorial;
+
+$ sudo add-apt-repository ppa:slgobinath/uget-chrome-wrapper
+
+Passo 4. Atualize o gerenciador de pacotes com o comando:
+
+$ sudo apt-get update
+
+Passo 5. Agora use o comando abaixo para instalar o programa;
+
+$ sudo apt-get install uget-chrome-wrapper
+
+--- Para desinstalar o uGet Chrome Wrapper no Ubuntu e derivados, faça o seguinte:
+
+Passo 1. Abra um terminal;
+
+Passo 2. Desinstale o programa, usando os comandos abaixo;
+
+$ sudo add-apt-repository ppa:slgobinath/uget-chrome-wrapper -r -y
+$ sudo apt-get remove uget-chrome-wrapper --auto-remove
