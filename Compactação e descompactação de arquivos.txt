@@ -1,0 +1,92 @@
+Fonte:
+https://www.todoespacoonline.com/w/2015/07/compactar-descompactar-arquivos-no-linux-terminal/
+
+
+---COMPACTAR E DESCOMPACTAR ARQUIVOS .ZIP
+
+ZIP é um formato bastante conhecido por usuários Windows, tanto que você pode compactar e descompactar pastas no sistema da Microsoft sem instalar nada caso tal arquivo esteja no formato .zip.
+
+Muitas versões do Linux já trazem o zip e unzip instalados, mas caso precise instalar manualmente, utilize o gerenciador de pacotes da seguinte maneira:
+
+sudo apt-get install zip unzip
+
+O comando acima serve para Debian, Ubuntu, Linux Mint e outras versões baseadas em Debian, utilize o gerenciador de pacotes da sua distro não esteja utilizando Debian.
+
+Para compactar e descompactar arquivos .zip, siga as instruções abaixo:
+
+
+compactar             zip -r compactada.zip pasta/
+descompactar          unzip compactada.zip
+listar                unzip -l compactada.zip
+comp. separadamente   zip compactada.zip pasta/arquivo-{1,2,3}.txt
+Desc. p/ pasta        unzip compactada.zip -d caminho/
+compactar c/ senha    zip -P senha -r compactada.zip pasta/
+
+
+
+---COMPACTAR E DESCOMPACTAR ARQUIVOS .RAR
+
+Se você estiver lidando com o formato “RAR”, é praticamente certeza de que este pacote veio de um Windão da vida. De qualquer maneira, existe a possibilidade de utilizar “rar” e “unrar” no Linux também. Mas será necessário instalar esses pacotes.
+
+Para realizar a instalação no Debian, digite o seguinte:
+
+sudo apt-get install rar unrar
+
+Utilize o gerenciador de pacotes de sua distro, caso não utilize Debian.
+
+Para utilizar rar e unrar, siga os passos abaixo:
+
+compactar               rar a compactada.rar pasta/
+descompactar            unrar x compactada.rar
+listar                  unrar l compactada.rar
+comp. separadamente     rar a compactada.rar pasta/arquivo-{1,2,3}.txt
+Desc. p/ pasta          unrar x compactada.rar caminho/
+compactar c/ senha      rar a compactada.rar pasta/ -p
+
+
+
+---JUNTAR / SEPARAR ARQUIVOS .TAR
+
+Este é um dos métodos mais rápidos para juntar vários arquivos dentro de um único container, porém, sem compressão. Portanto, se você quer apenas guardar todos os arquivos dentro de um único arquivo e salvar tempo, siga os passos abaixo:
+
+juntar                  tar -cvf unico.tar pasta/
+separa                  tar -xvf unico.tar
+listar                  tar -tvf unico.tar
+Juntar separadamente    tar -cvf unico.tar arquivo1 arquivo2 arquivo3
+Separar p/ pasta        tar -xvf unico.tar -C caminho/da/pasta/
+
+Lembre-se do seguinte, o “-c” significa “criar”, porque você está pegando uma pasta ou vários arquivos e jogando dentro de um único pacote. Quando você for separar tais arquivos ou pastas, irá utilizar “-x” (essa é a única diferença entre juntar e separar arquivos).
+
+Por exemplo, se eu quiser separar (descompactar) vários arquivos, simplesmente digito:
+
+tar -xvf arquivos.tar
+A estrutura dos arquivos separados será a mesma de quando você os juntou, ou seja, se for uma pasta, a saída também será uma pasta; se forem vários arquivos separados, a saída serão vários arquivos separados.
+
+Nos próximos exemplos vamos adicionar dois métodos de compressão, ou gzip (.gz) ou bzip2 (.bz2). Cada qual com seus pontos fortes e fracos.
+
+
+
+---COMPACTAR E DESCOMPACTAR ARQUIVOS .TAR.GZ
+
+Este é o método de compactação gzip (.gz), não consome tanto processamento e tem um fator de compressão muito bom. Para compactar / descompactar arquivos .tar.gz siga as instruções abaixo:
+
+compactar             tar -zcvf compactada.tar.gz pasta/
+descompactar          tar -zxvf compactada.tar.gz
+listar                tar -ztvf compactada.tar.gz
+comp. separadamente   tar -zcvf compactada.tar.gz pasta/arquivos-{1,2}.txt outra-coisa/
+Desc. p/ pasta        tar -zxvf compactada.tar.gz -C caminho/da/pasta/
+
+Apenas adicione um “-z” no comando e a extensão .gz, já estará comprimindo os arquivos.
+
+
+
+---COMPACTAR E DESCOMPACTAR ARQUIVOS .TAR.BZ2
+Este é o bzip2, apesar de utilizar mais recursos do computador, tem um fato de compressão excelente. Para compactar / descompactar arquivos .tar.bz2 siga as instruções abaixo:
+
+compactar             tar -jcvf compactada.tar.bz2 pasta/
+descompactar          tar -jxvf compactada.tar.bz2
+listar                tar -jtvf compactada.tar.bz2
+comp. separadamente   tar -jcvf compactada.tar.bz2 pasta/arquivo-{1,2}.txt
+Desc. p/ pasta        tar -jxvf compactada.tar.bz2 -C caminho/
+
+Troque o “z” por um “j” e já estará utilizando bzip2. Não se esqueça de adicionar a extensão .bz2.

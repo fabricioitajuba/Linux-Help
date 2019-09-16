@@ -1,8 +1,16 @@
 Fonte:
 https://www.youtube.com/watch?v=O2L5d1GPcAY
+https://lcom23.wordpress.com/2018/09/19/instalar-mate-desktop-no-ubuntu-18-04/
 
+-- para instalar
 $ sudo apt-add-repository ppa:ubuntu-mate-dev/ppa
 $ sudo apt-add-repository ppa:ubuntu-mate-dev/trusty-mate
 $ sudo apt-get update
 $ sudo apt-get upgrade
 $ sudo apt-get install ubuntu-mate-core ubuntu-mate-desktop
+
+-- para desinstalar
+sudo apt remove -y ubuntu-mate-desktop mate-* ubuntu-mate-* plymouth-theme-ubuntu-mate-* lightdm
+sudo apt autoremove -y
+sudo apt install --reinstall -y gdm3
+sudo reboot
