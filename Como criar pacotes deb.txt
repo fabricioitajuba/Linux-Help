@@ -1,0 +1,163 @@
+Fonte:
+https://terminalroot.com.br/2014/12/como-criar-pacotes-deb.html
+https://www.youtube.com/watch?v=DS7ozD5_tko&t=171s
+
+1 - Estar de posse do arquivo executável, pode ser um script por exemplo:
+
+$ sudo nano atualiza.sh
+
+#!/bin/sh
+echo "Atualizando..."
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
+sudo apt autoclean
+echo "Fim!"
+
+Salvar e sair do nano.
+
+2 - altere as permissões do arquivo:
+
+$ sudo chmod +x atualiza.sh
+
+3 - testar para saber se está funcionando corretamente:
+
+$ ./atualiza.sh
+
+4 - Criar uma pasta com o nome do pacote:
+
+$ mkdir atualiza
+
+5 - mova o scrip e o icone escolhido para dentro da pasta:
+
+$ mv atualiza.sh ./atualiza
+$ mv icone_atualiza.png ./atualiza
+
+6 - apague os arquivos:
+$ rm atualiza.sh icone_atualiza.png
+
+7 - entre na pasta do pacote:
+
+$ cd atualiza/
+
+8 - renome o arquivo atualiza.sh para atualiza
+
+$ mv atualiza.sh atualiza
+
+9 - crie a pasta DEBIAN
+
+$ mkdir DEBIAN
+
+10 - crie o arquivo control dentro da pasta DEBIAN
+
+$ sudo nano DEBIAN/control
+
+11 - entre com as seguintes linhas:
+
+Package:terminalroot
+Version: 0.1
+Priority:
+Architecture: all
+Essential:
+Depends:
+Pre-depends:
+Suggests:
+Installed-Size:
+Maintainer: Marcos da B. M. Oliveira
+Conflicts:
+Replaces:
+Provides:
+Description: Acesse o blog terminalroot.com.br e descubra como criar pacotes .deb
+
+12 - alterar as linhas:
+
+Package:atualiza
+Version: 0.1
+Priority:
+Architecture: all
+Essential:
+Depends:
+Pre-depends:
+Suggests:
+Installed-Size:
+Maintainer: Fabricio de Lima Ribeiro
+Conflicts:
+Replaces:
+Provides:
+Description: Atualiza a lista de repositórios
+
+Salve e saia do programa
+
+13 - crie a seguinte pasta:
+
+$ mkdir -p usr/bin/
+
+14 - mova o arquivo "atualiza" para dentro da pasta usr/bin/:
+
+$ mv atualiza usr/bin/
+
+15 - crie a pasta: usr/share/applications/
+
+$ mkdir -p usr/share/applications/
+
+16 - crie o arquivo atualiza.desktop
+
+$ sudo nano usr/share/applications/atualiza.desktop
+
+17 - entre com as seguintes linhas:
+
+[Desktop Entry]
+Name=Marcos Pinguim
+Icon=/opt/terminalroot.jpg
+Type=Application
+Categories=GNOME;GTK;Utility;TextEditor;
+Exec=terminalroot
+StartupNotify=false
+Terminal=false
+
+altere as seguintes linhas:
+
+[Desktop Entry]
+Name=Atualiza Shell Script
+Icon=icone_atualiza
+Type=Application
+Categories=Utility;
+Exec=atualiza
+StartupNotify=false
+Terminal=true
+
+salve e saia do programa
+
+18 - crie a pasta usr/share/pixmaps/
+
+$ mkdir -p usr/share/pixmaps/
+
+19 - mova o icone_atualiza.png para dentro da pasta:
+
+$ mv icone_atualiza.png usr/share/pixmaps/
+
+20 - saida de dentro da pasta atualiza/
+
+$ cd ..
+
+21 - crie o pacote .deb através do seguinte comando:
+
+$ dpkg-deb -b atualiza/ atualiza.0.1.deb
+
+22 - verifique se o arquivo "atualiza.0.1.deb" foi criado (em vermelho)
+
+23 - para instalar o pacote:
+
+$ sudo dpkg -i atualiza.0.1.deb
+
+Após a instalação, veja se o ĩcone foi criado junto com os programas e execute para ver se está funcionando.
+
+Se quiser, pode executar a partir do terminal:
+
+$ atualiza
+
+se quiser remover o programa:
+
+$ sudo apt remove atualiza
+
+

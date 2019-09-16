@@ -1,0 +1,29 @@
+Como instalar o vlc
+
+Fonte:
+https://www.edivaldobrito.com.br/vlc-no-ubuntu-18-04/
+
+Passo 1. Abra um terminal;
+
+Passo 2. Se você já tiver um versão instalada via Snap, desinstale-a com o seguinte comando
+
+sudo apt remove vlc
+
+Passo 3. Depois de desinstalar a versão antiga, a nova versão pode ser instalada com o comando:
+
+sudo snap install vlc
+
+Passo 4. E se você quiser instalar a versão de desenvolvimento, temos que executar o seguinte:
+
+sudo snap install vlc --edge
+
+Passo 5. Se você optar por usar o repositório PPA do VLC, então use esses comandos;
+
+sudo apt remove vlc --auto-remove
+sudo add-apt-repository ppa:videolan/stable-daily
+sudo apt update
+sudo apt install vlc
+
+Pronto! Agora, você pode iniciar o programa no menu Aplicativos/Dash/
+
+Atividades ou qualquer outro lançador de aplicativos da sua distro, ou digite vlc ou em um terminal, seguido da tecla TAB.
