@@ -1,0 +1,8 @@
+1 André 90
+2 José 40
+3 Fernando 30
+4 Jorge 10
+5 Pedro 80
+6 Paulo 65
+7 Samuel 45
+

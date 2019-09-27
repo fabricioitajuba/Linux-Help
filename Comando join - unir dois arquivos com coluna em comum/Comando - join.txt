@@ -1,0 +1,59 @@
+Comando Join - une dois arquivos com uma mesma coluna em comum
+
+$ cat nomes.txt 
+André
+José
+Fernando
+Jorge
+Pedro
+Paulo
+Samuel
+
+
+$ cat notas.txt 
+90
+40
+30
+10
+80
+65
+45
+
+
+- Devemos criar uma coluna em comum para unirmos os dois arquivos. uma maneira é:
+
+$ nl nomes.txt > nomes1.txt
+$ cat nomes1.txt 
+     1	André
+     2	José
+     3	Fernando
+     4	Jorge
+     5	Pedro
+     6	Paulo
+     7	Samuel
+
+$ nl notas.txt > notas1.txt
+$ cat notas1.txt 
+     1	90
+     2	40
+     3	30
+     4	10
+     5	80
+     6	65
+     7	45
+
+
+- Com o comando nl, será criada uma coluna com números iguais em amos os arquivos, para unir os dois arquivos:
+
+$ join nomes1.txt notas1.txt > resultado.txt
+$ cat resultado.txt 
+1 André 90
+2 José 40
+3 Fernando 30
+4 Jorge 10
+5 Pedro 80
+6 Paulo 65
+7 Samuel 45
+
+
+

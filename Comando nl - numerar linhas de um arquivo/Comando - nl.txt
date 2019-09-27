@@ -1,0 +1,43 @@
+Comando nl - enumera linhas de um arquivo
+
+Exemplo:
+
+arquivo frutas.txt contento os seguintes textos
+
+$ cat frutas.txt
+
+abacaxi
+laranja
+melancia
+limão
+tangerina
+abacate
+melão
+
+ao executar o comando:
+
+$ nl frutas.txt
+
+aparecerá:
+
+     1	abacaxi
+     2	laranja
+     3	melancia
+     4	limão
+     5	tangerina
+     6	abacate
+     7	melão
+
+se quiser salvar em um outro arquivo:
+
+$ nl frutas.txt > frutas1.txt
+
+$ cat frutas1.txt 
+     1	abacaxi
+     2	laranja
+     3	melancia
+     4	limão
+     5	tangerina
+     6	abacate
+     7	melão
+
