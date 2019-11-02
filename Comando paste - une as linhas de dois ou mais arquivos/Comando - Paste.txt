@@ -1,0 +1,26 @@
+Comando Paste - une as linhas de dois ou mais arquivos
+
+$ cat nomes.txt
+alessandro
+pedro
+marcos
+andre
+luciana
+
+$ cat notas.txt
+10 20
+30 30
+40 10
+50 60
+NC 10
+
+unindo os arquivos e colocando o resultado no arquivo resultado.txt:
+
+$ paste nomes.txt notas.txt > resultados.txt
+
+$ cat resultado.txt
+alessandro 10 20
+pedro 30 30
+marcos 40 10
+andre 50 60
+luciana NC 10

@@ -1,0 +1,5 @@
+Fonte:
+https://i-mscp.net/thread/15719-enabled-ufw-filezilla-unable-to-get-directory/
+
+sudo ufw allow 21
+sudo ufw allow 32768:60999/tcp

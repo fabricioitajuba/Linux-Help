@@ -1,0 +1,3 @@
+sudo apt-add-repository:ppa:stebbins/handbrake-releases -y
+sudo apt-get update
+sudo apt-get install handbrake-gtk handbrake-cli -y
