@@ -1,0 +1,15 @@
+$ sudo apt-get install gparted
+
+- Caso o GParted não funcione:
+
+Abra seu terminal e digite o seguinte comando:
+
+$xhost +SI:localuser:root
+
+apos isso digite:
+
+$sudo gparted
+
+informe a senha de root.
+
+Com isso seu GParted vai abrir normalmente no Ubuntu 17.10.

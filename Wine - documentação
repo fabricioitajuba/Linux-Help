@@ -1,0 +1,7 @@
+
+- Pasta onde fica instalado os programas do wine:
+
+/home/"usuário"/.wine
+
+- Instalar ou desinstalar programa no wine:
+$ wine uninstaller
