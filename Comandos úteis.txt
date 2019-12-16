@@ -1,0 +1,9 @@
+- Trocar "espaço" por "fim de linha" no arquivo "teste.txt" e colocar o resultado no arquivo "teste2.txt":
+
+$ tr [:space:] '\n' < teste.txt > teste2.txt
+
+- Retorna o número da linha onde se encontra a palavra "andreia"
+cat -n teste.txt | grep andreia 
+
+- Salvar o conteúdo de um arquivo para uma variável:
+VAR1=$(cat /root/arquivo1.txt) 

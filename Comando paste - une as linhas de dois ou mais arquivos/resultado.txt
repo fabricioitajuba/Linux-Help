@@ -1,0 +1,6 @@
+alessandro	10 20
+pedro	30 30
+marcos	40 10
+andre	50 60
+luciana	NC 10
+	

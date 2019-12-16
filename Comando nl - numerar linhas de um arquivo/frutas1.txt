@@ -1,0 +1,8 @@
+     1	abacaxi
+     2	laranja
+     3	melancia
+     4	limão
+     5	tangerina
+     6	abacate
+     7	melão
+       

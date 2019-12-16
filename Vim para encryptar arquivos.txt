@@ -1,0 +1,21 @@
+A maneira mais simples é:
+
+$ vim -x "nome do arquivo"
+
+digite uma senha e repita.
+
+outra maneira é estando dentro do arquivo e digital na linha de comando "-X"
+
+--Criptografia mais forte
+
+- na linha de comando digite "help cm" e escolha um tipo de encritação através do comando:
+
+:setlocal cm="tipo de criptografia" 
+
+ex:
+
+:setlocal cm=blowfish2
+
+
+
+
