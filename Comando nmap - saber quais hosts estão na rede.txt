@@ -1,0 +1,7 @@
+- escanear todos os ips da rede
+$ nmap -v -sn 192.168.0.0/24
+
+ou
+
+- escanear somente os hosts ativos
+$ nmap -sP 192.168.0.1/24
