@@ -1,0 +1,109 @@
+Fonte:
+https://danieldonda.com/2019/12/12/halfsynxmasfinnull-scans-com-nmap/
+https://www.youtube.com/watch?v=LC6MzJd7s1c
+
+Neste artigo bem simplificado e ilustrado (EM ASCII) fica fácil entender o tipos de SCAN que podem ser feitos contra determinados  sistemas usando a melhor de todas as ferramentas de analise de rede. o NMAP. Para entender bem esses tipos de escaneamento e seu resultado é importante que conheça o Three-way Handshake  utilizado na comunicação do TCP/IP.
+
+Alguns Scans somente funcionam se o OS foi desenvolvido de acordo com a RFC 793
+
+Three-way handshake
+
++----+                     +----+
+|    | --------SYN-------> |    |
+|    | <------SYN/ACK----- |    |
+|    | --------ACK-------> |    |
++----+                     +----+
+10.0.0.1/21              10.0.0.3:21
+
+Esses comandos do Nmap são cobrados no exame, fique atento:
+
++---------------------------------------------+
+| Stealth Scan (half-open scan)              |
+
++---------------------------------------------+
+| nmap –sS -v 10.0.0.3 –p 21                  |
++---------------------------------------------+
+
+SE A PORTA ESTA ABERTA
++----+                     +----+
+|    | --------SYN-------> |    |
+|    | <------SYN/ACK----- |    |
+|    | --------RST-------> |    |
++----+                     +----+
+10.0.0.1/2134              10.0.0.3:80
+
+SE A PORTA ESTA FECHADA
++----+                     +----+
+|    | --------SYN-------> |    |
+|    | <-------RST-------- |    |
+|    |                     |    |
++----+                     +----+
+10.0.0.1/2134              10.0.0.3:80
+
++---------------------------------------------+
+| Xmas Scan (Não funciona no Windows) RFC 793 |
+
++---------------------------------------------+
+| nmap -sX -v 10.0.0.3 –p 21                  |
++---------------------------------------------+
+SE A PORTA ESTA ABERTA
++----+                     +----+
+|    | ---FIN/URG/PUSH---> |    |
+|    |                     |    |
+|    |                     |    |
++----+                     +----+
+10.0.0.1               10.0.0.3:21
+
+SE A PORTA ESTA FECHADA
++----+                     +----+
+|    | ---FIN/URG/PUSH---> |    |
+|    | <-------RST-------- |    |
+|    |                     |    |
++----+                     +----+
+10.0.0.1               10.0.0.3:21
+
++---------------------------------------------+
+| FIN Scan (Não funciona no Windows) RFC 793  |
+
++---------------------------------------------+
+| nmap -sF -v 10.0.0.3 –p 21                  |
++---------------------------------------------+
+
+SE A PORTA ESTA ABERTA
++----+                     +----+
+|    | --------FYN-------> |    |
+|    |                     |    |
+|    |                     |    |
++----+                     +----+
+10.0.0.1                 10.0.0.3:21
+
+SE A PORTA ESTA FECHADA
++----+                     +----+
+|    | --------FYN-------> |    |
+|    | <-----RST/ACK------ |    |
+|    |                     |    |
++----+                     +----+
+10.0.0.1                 10.0.0.3:21
+
++---------------------------------------------+
+| NULL Scan (Não funciona no Windows) RFC 793 |
+
++---------------------------------------------+
+| nmap -sN -v 10.0.0.3 –p 21                  |
++---------------------------------------------+
+
+SE A PORTA ESTA ABERTA
++----+                     +----+
+|    | ---------NO-------> |    |
+|    |                     |    |
+|    |                     |    |
++----+                     +----+
+10.0.0.1                 10.0.0.3:21
+
+SE A PORTA ESTA FECHADA
++----+                     +----+
+|    | ---------NO-------> |    |
+|    | <-----RST/ACK------ |    |
+|    |                     |    |
++----+                     +----+
+10.0.0.1                 10.0.0.3:21
