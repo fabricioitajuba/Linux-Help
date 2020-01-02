@@ -13,6 +13,13 @@ $ sha256sum --help
 
 Exemplo de como saber se o arquivo foi baixado com sucesso usando hash:
 
+hash: sha256 - b9beac143e36226aa8a0b03fc1cbb5921cff80123866e718aaeba4edb81cfa63
+
 echo "b9beac143e36226aa8a0b03fc1cbb5921cff80123866e718aaeba4edb81cfa63 *ubuntu-18.04.3-live-server-amd64.iso" | shasum -a 256 --check
 
 A hash do arquivo deve ser igual a hash do servidor.
+
+
+Programa para verificar de maneira gráfica: GtkHash que pode ser instalado:
+$ sudo apt install gtkhash
+

