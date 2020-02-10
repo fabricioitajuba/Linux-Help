@@ -1,0 +1,36 @@
+Fonte:
+https://autocorerobotica.blog.br/como-instalar-a-arduino-ide-no-ubuntu/
+
+1. Baixe o Arduino IDE na pasta /Downloads através do site oficial do Arduino
+
+www.arduino.cc
+
+2. Extraia os arquivos da pasta /Downloads
+
+3. Abra o Terminal
+
+4. Vá para a pasta de /Downloads
+
+5. Mova a pasta descompactada para o diretório “opt”
+
+ex:
+sudo mv arduino-1.8.11 /opt
+
+6. Entre na pasta movida através do seguinte comando:
+
+cd /opt/arduino-1.8.11/
+
+7. Edite o script “install.sh” (Observação Importante!)
+
+sudo nano install.sh
+
+Caso encontre “RESOURCE_NAME=cc.arduino.arduinoide”, altere para “RESOURCE_NAME=arduino.arduinoide”. Porém, caso não encontre, como na imagem acima, siga para próximo passo.
+
+8. Torne o “install.sh” executável
+
+sudo chmod +x install.sh
+
+9. Execute o “install.sh”
+
+sudo ./install.sh
+
