@@ -1,0 +1,5 @@
+Ex:
+
+cp -rf /var/www/html/* /home/fabricio/Apache/
+
+Todo o conteúdo dentro da pasta /html será copiado para dentro da pasta /Apache
