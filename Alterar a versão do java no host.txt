@@ -1,3 +1,0 @@
-Caso tenha várias versões do java instalado e deseja selecionar uma como padrão:
-
-sudo update-alternatives --config java

@@ -1,0 +1,30 @@
+### SQLite - É um banco de dados local, com as mesmas características do Mysql
+porém com recursos reduzido.
+
+-Para instalar:
+
+$sudo apt-get update
+$sudo apt-get install sqlite3
+
+-Para testar, basta executar:
+
+$sqlite3
+
+-Será mostrado:
+
+SQLite version 3.22.0 2018-01-22 18:45:57
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite>
+
+-Para sair:
+sqlite>.quit
+
+## Softwares gráficos para gerenciamento do banco de dados: 
+
+sqlitebrowser
+sudo apt-get install sqlitebrowser
+
+sqliteman
+$sudo apt-get install sqliteman
