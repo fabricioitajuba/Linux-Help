@@ -1,0 +1,18 @@
+Para instalar o Etcher no Ubuntu 20.04 LTS e distribuições derivadas, abra um terminal e siga os passos abaixo.
+
+1. Adicione o repositório do Etcher:
+
+$ echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
+
+2. Ative a chave de autenticação:
+
+$ sudo apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE192D401AB61
+
+3. Atualize seu sistema:
+
+$ sudo apt update
+$ sudo apt upgrade
+
+4. Instale o aplicativo:
+
+$ sudo apt install balena-etcher-electron
