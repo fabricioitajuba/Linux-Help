@@ -1,0 +1,14 @@
+Como executar arquivo AppImage no Linux
+
+$ chmod u+x arquivo.AppImage
+$ ./archive.AppImage
+
+Do mesmo modo, outra maneira mais simples é clicar com o botão direito do mouse em cima do arquivo baixado. Depois, com o segundo clique do mouse, selecionar Propriedades -> Permissões -> Criar executável.
+
+Então, agora basta clicar no AppImage  e fazer a instalação.
+
+Igualmente, você também pode dar ao aplicativo mais permissões, através do comando:
+
+$ sudo ugo+x Downloads/arquivo.AppImage
+$ sudo cp Downloads/file.AppImage /usr/bin/
+

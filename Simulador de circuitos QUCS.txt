@@ -1,0 +1,21 @@
+Simulador de circuitos QUCS
+
+--- Instalação via repositório
+sudo add-apt-repository -y ppa:qucs/qucs
+sudo apt-get update
+sudo apt-get install qucs -y
+
+-- Instalação via pacote
+uname -m
+
+32 bits
+wget https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_i386.deb -O qucs.deb
+
+64 bits
+wget https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb -O qucs.deb
+
+sudo dpkg -i qucs.deb
+sudo apt-get install -f ou sudo apt install ./qucs.deb
+
+Para desinstalar:
+sudo apt-get remove qucs*

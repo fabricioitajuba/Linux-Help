@@ -1,0 +1,13 @@
+Instalação headless do Dropbox via linha de comando
+
+O Dropbox daemon funciona perfeitamente em todos os servidores Linux de 32 e 64 bits.
+Para instalá-lo, execute o comando a seguir no seu terminal Linux.
+
+32 bits:
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -
+
+64-bit:
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+
+Em seguida, execute o Dropbox daemon na pasta .dropbox-dist recém-criada.
+~/.dropbox-dist/dropboxd

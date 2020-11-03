@@ -1,0 +1,32 @@
+# Configurando a conexão Wi-Fi
+
+Na nova partição boot criada no cartão de memória, crie um arquivo com o seguinte nome:
+
+wpa_supplicant.conf
+
+Entre com as seguintes linhas de código:
+
+country=BR
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid="SSID"
+    psk="PASSWORD"
+    key_mgmt=WPA-PSK
+}
+
+
+
+# Ativando SSH
+
+No diretório principal da unidade boot do cartão de memória, crie um arquivo vazio com o nome ssh
+
+O Raspbian vem configurado por padrão com o seguinte hostname:
+
+raspberrypi
+
+# Para logar:
+
+usuário: pi
+senha: raspberry
