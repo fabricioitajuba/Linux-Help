@@ -1,3 +1,5 @@
+# Configurando o Raspberry Pi sem teclaro e monitor
+
 # Configurando a conexão Wi-Fi
 
 Na nova partição boot criada no cartão de memória, crie um arquivo com o seguinte nome:
