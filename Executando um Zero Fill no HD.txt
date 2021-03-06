@@ -1,0 +1,11 @@
+Executando um Zero Fill no HD
+
+Execute o comando a seguir e descubra qual é a unidade do hd externo:
+
+$ sudo fdisk -l
+
+Com o identificador anotado, execute agora o seguinte comando (ex. sdb):
+
+$ sudo shred -n 2 -z -v /dev/sdb
+
+Agora vá descansar pois a formatação em baixo nível é extremamente lenta e demorar longas horas.
