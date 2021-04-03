@@ -1,0 +1,19 @@
+- Listar arquivos com detalhes:
+
+$ ls -la
+
+- Verificar a memória RAM do sistema:
+
+$ free -m
+
+- Verificar o tamanho do disco:
+
+$ df -h
+
+- Acessar outra máquina via ssh:
+
+$ ssh -l fabricio 192.168.0.3
+
+- Copiar um arquivo para outra máquina via ssh:
+
+$ scp Aniversário.MP4  192.168.0.3:/home/fabricio/Vídeos/Caio/Aniversários
