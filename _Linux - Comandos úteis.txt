@@ -10,6 +10,22 @@ $ free -m
 
 $ df -h
 
+- Para saber onde estou:
+
+$ pwd
+
+- Como saber os processos (programas em segundo plano) que estão sendo executados:
+
+$ pstree
+
+ou
+
+$ top
+
+- Como "matar" um processo caso esteja travado:
+
+$ kill "PID do processo achado com o comando top"
+
 - Acessar outra máquina via ssh:
 
 $ ssh -l fabricio 192.168.0.3
