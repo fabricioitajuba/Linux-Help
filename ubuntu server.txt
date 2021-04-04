@@ -1,0 +1,14 @@
+- Retirar menssagens de erro de checksum:
+
+Ex:
+
+[273375.926571] jme 0000:14:00.5: eth0: UDP Checksum error
+
+Disable RX checksums (replace eth0 with your interface name).
+
+$ ethtool --offload eth0 rx off
+
+ou
+
+$ ethtool --offload  eth0  rx off  tx off
+$ ethtool -K eth0 gso off
