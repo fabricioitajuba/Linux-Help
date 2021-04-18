@@ -1,0 +1,8 @@
+Instalação:
+
+sudo apt purge youtube-dl 
+sudo pip3 install youtube-dl
+pip install -U youtube-dl
+
+Para usar:
+$ sudo youtube-dl "link do youtube"
