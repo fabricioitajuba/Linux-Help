@@ -1,0 +1,18 @@
+Fonte:
+https://www.osradar.com/install-flat-remix-theme-ubuntu/
+
+$mkdir projects
+$cd projects
+git clone https://github.com/daniruiz/flat-remix
+git clone https://github.com/daniruiz/flat-remix-gtk
+mkdir -p ~/.icons && mkdir -p ~/.themes
+cp -r flat-remix/Flat-Remix* ~/.icons/ && cp -r flat-remix-gtk/Flat-Remix-GTK* ~/.themes/
+sudo apt install gnome-tweak-tool fonts-hack-ttf -y
+
+abra o: "gnome-tweaks-tool" ou "Geral no ubuntu"
+
+em:
+"Aparência->Temas->Aplicativo" mudar para "Flat-Remix-GTK-Blue-Darkest-NoBorder
+"Aparência->Temas->Icones" mudar para "Flat-GTK-Blue-Dark
+"Fontes->Texto mono espaçado" mudar para "Hack Regular"
+
