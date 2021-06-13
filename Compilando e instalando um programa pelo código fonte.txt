@@ -1,0 +1,19 @@
+Ex. utilizaremos o audacity como exemplo:
+
+1 - Faça o download do programa:
+
+audacity-minsrc-3.0.0.tar.xz
+
+2 - Descompacte o arquivo:
+
+$ tar xvf audacity-minsrc-3.0.0.tar.xz
+
+3 - Leia as informações referentes a compilação do programa;
+
+4 - Execute se tiver, o script de configuração:
+
+$ ./configure
+
+caso falte alguma biblioteca, baixe-a.
+
+
