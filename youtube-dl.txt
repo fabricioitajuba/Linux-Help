@@ -11,4 +11,4 @@ sudo apt-get autoremove
 youtube-dl http://VIDEO_URL
 
 - Para baixar o áudio
-# youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=jwD4AEVBL6Q
+# youtube-dl -x --audio-format mp3 http://VIDEO_URL
