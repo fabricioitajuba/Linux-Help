@@ -1,0 +1,14 @@
+- Para instalar
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt-get update
+sudo apt-get install youtube-dl
+
+- Para desinstalar
+sudo apt-get remove youtube-dl --auto-remove
+sudo apt-get autoremove
+
+- Para baixar o vídeo
+youtube-dl http://VIDEO_URL
+
+- Para baixar o áudio
+# youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=jwD4AEVBL6Q
