@@ -1,0 +1,23 @@
+Através de um arquivo contendo comandos do Bash, podemos criar um arquivo de limpeza que realiza a remoção dos dados indesejados do nosso sistema, com a melhora da performance deste.
+
+Comandos do Arquivo limpeza.sh
+
+killall nautilus
+sudo apt autoclean -y && sudo apt autoremove -y
+sudo apt update && sudo apt upgrade -y
+sudo snap refresh
+rm -rf .local/share/Trash/files/*
+rm -rf .local/share/Trash/expunged/*
+rm -rf .local/share/Trash/info/*
+sudo chown -R $USER:$USER ~/.local/share/
+sudo swapoff -a; sudo swapon -a
+sudo /sbin/fstrim --all || true
+sudo journalctl --vacuum-time=2d
+echo rm -r ~/.cache/thumbnails
+dconf write /org/gnome/nautilus/preferences/show-image-thumbnails '"always"'
+
+Trocar para um executável o arquivo:
+$ chmod 777 limpeza.sh
+
+Executar:
+./limpeza.sh
