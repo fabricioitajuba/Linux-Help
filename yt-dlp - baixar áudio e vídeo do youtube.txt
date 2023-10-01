@@ -1,0 +1,27 @@
+Baixar áudio e vídeo do youtube
+
+Para instalar:
+
+sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp  # Make executable
+
+To update, run:
+
+sudo yt-dlp -U
+
+
+APT
+You can download and install yt-dlp for recent Ubuntu and other related Debian-based distributions by adding the this PPA
+
+sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
+sudo apt update                                 # Update package list
+sudo apt install yt-dlp                         # Install yt-dlp
+Your system's package manager will now automatically download the correct dependencies and keep the package updated with the rest of your system whenever you run:
+
+sudo apt update
+sudo apt install yt-dlp
+
+
+Para baixar mp3
+
+yt-dlp -x --audio-format mp3 URL
