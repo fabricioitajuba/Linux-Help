@@ -1,0 +1,37 @@
+How to compress files into rar?
+
+Due to licensing issues, an Ubuntu installation does not include packages for RAR files natively. 
+
+Open a terminal and install a rar package:
+
+sudo apt install rar
+
+Here is a basic syntax to compress files:
+
+rar [command] [ArchiveName] [file]
+
+For example:
+
+sudo rar a rartest file1.txt file2.txt
+
+Sample output:
+
+To add a password to your archive, just add -p option to the end of your command and you will be prompted to enter a password:
+
+sudo rar a rartest file1.txt file2.txt -p
+
+Decompress RAR files on Ubuntu
+We have to install a package called unrar from the official Ubuntu repositories.
+
+Run the following in your terminal:
+
+sudo apt install unrar
+Follow this syntax to decompress files in Ubuntu:
+
+unrar x [rar-file]
+Sample output:
+
+
+If the file is password-protected, you will be prompted immediately.
+
+Congratulations! You have learned how to compress and decompress files from a terminal in your Ubuntu Shell.
