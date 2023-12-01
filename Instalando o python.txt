@@ -1,0 +1,13 @@
+Instalar a partir de uma instalação compactada
+
+- Baixe o arquivo compactado de instalação do python;
+
+- Descompacte o arquivo;
+
+- Entre na pasta descompactada digite os seguintes comandos:
+
+$ sudo apt install build-essential pkg-config zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev libbz2-dev
+
+$ ./configure --enable-optimizations
+$ make -j 4 
+$ sudo make altinstall
