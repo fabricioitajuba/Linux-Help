@@ -1,0 +1,7 @@
+Instalar a partir de uma instalação compactada:
+
+Descompacte o arquivo, na pasta descompactada digite os seguintes comandos:
+
+$ ./configure
+$ make
+$ sudo make install
