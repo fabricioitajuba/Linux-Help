@@ -1,0 +1,31 @@
+## Instalando o PYTHON
+
+Instalar a partir de uma instalação compactada
+
+- Baixe o arquivo compactado de instalação do python;
+
+- Descompacte o arquivo;
+
+- Entre na pasta descompactada digite os seguintes comandos:
+
+$ sudo apt install build-essential pkg-config zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev libbz2-dev
+
+$ ./configure --enable-optimizations
+$ make -j 4 
+$ sudo make altinstall
+
+- Com o VSCODE instalado, procurar pela extensão platformio e instalar;
+
+
+## Utilizando o FileSystem no platformio
+
+- Baixe o arquivo no seguinte endereço:
+https://github.com/esp8266/arduino-esp8266fs-plugin/releases/download/0.5.0/ESP8266FS-0.5.0.zip
+
+- Extraia o conteúdo na seguinte pasta /home/"usuário"/.platformio/packages:
+
+- O arquivo "esp8266Fs.jar" deverá estar no seguinte caminho:
+/home/"usuário"/.platformio/packages/ESP8266FS/tool
+
+- Reinicie o vscode
+
