@@ -1,11 +1,23 @@
-- Instalar o programa
-$sudo apt-get install clamav
+- Instalar o programa:
+$ sudo apt install clamav clamav-daemon
 
-- Instalar as definições de vírus
-$sudo freshclam
+- Instalar as definições de vírus:
+$ sudo freshclam
 
-- Instalar a interface gráfica
+- Instalar a interface gráfica:
 $ sudo apt-get install clamtk
 
-- Para escanear pasta de forma recursiva
-$clamscan -r /home/fabricio
+- Para escanear pasta de forma recursiva:
+$ clamscan -r /home/fabricio
+
+- Para remover o vírus (caso infectado):
+$ clamscan --infected --remove --recursive /home/fabricio
+
+- Para iniciar o daemon do ClamAV para que ele possa procurar por ameaças constantemente.
+
+$ /etc/init.d/clamav-daemon start
+$ /etc/init.d/clamav-freshclam start
+
+- Para utiliza o help:
+
+$ clamav --help
