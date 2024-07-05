@@ -1,0 +1,7 @@
+$ sudo apt update
+
+-Erro:
+E: Could not get lock /var/lib/apt/lists/lock. It is held by process 1044 (packagekitd)
+
+-Solução:
+sudo fuser -vki /var/lib/apt/lists/lock
