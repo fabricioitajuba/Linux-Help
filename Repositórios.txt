@@ -1,0 +1,34 @@
+### Adicionando um repositório:
+
+$ sudo add-apt-repository ppa:"repositório"
+$ sudo apt update
+$ sudo apt install "programa"
+
+Ex:
+$ sudo add-apt-repository ppa:kicad/kicad-8.0-releases
+$ sudo apt update
+$ sudo apt install kicad
+
+### Instalando o programa:
+$ sudo apt install "programa"
+
+Ex:
+$ sudo apt install kicad
+
+### Instalando dependências:
+$ sudo apt-cache rdepends --installed "dependência"
+
+Ex:
+$ sudo apt-cache rdepends --installed libocct-visualization-7.6
+
+### Removendo o programa:
+$ sudo apt remove --autoremove "programa"
+
+Ex:
+$ sudo apt remove --autoremove kicad
+
+### Removendo o repositório:
+$ sudo add-apt-repository --remove ppa:"repositório"
+
+Ex:
+$ sudo add-apt-repository --remove ppa:kicad/kicad-8.0-releases
