@@ -50,6 +50,12 @@ $ sudo apt remove --purge php7.4-cli
 $ sudo rm -rf /etc/php/7.4
 $ sudo apt autoremove
 
+- Se quiser parar o Apache:
+$ sudo systemctl stop apache2
+
+- Se quiser startar o Apache:
+$ sudo systemctl start apache2
+
 - Testando o php:
 $ sudo nano hello.php
 
