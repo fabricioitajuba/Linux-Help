@@ -1,0 +1,60 @@
+- Para saber qual php está ativo na máquina:
+$ php -v
+
+- Para saber quais php estão instalados na máquina:
+
+$ ls /etc/php
+
+- Para instalar o php 7.4:
+
+$ sudo apt-get update
+$ sudo apt -y install software-properties-common
+$ sudo add-apt-repository ppa:ondrej/php
+$ sudo apt-get update
+$ sudo apt -y install php7.4
+
+- Para saber quais módulos estão instalados:
+$ php -m
+
+- Para instalar novos módulos:
+$ sudo apt-get install php7.4-PACKAGE_NAME
+
+- Para instalar vários módulos:
+$ sudo apt-get install -y php7.4-cli php7.4-json php7.4-common php7.4-mysql php7.4-zip php7.4-gd php7.4-mbstring php7.4-curl php7.4-xml php7.4-bcmath
+
+- Para instalar o composer 7.4:
+
+Crie o arquivo php.ini e adicione as seguites extensões:
+
+$ sudo nano /etc/php/7.4/cli/conf.d/php.ini
+
+extension=json.so
+extension=phar.so
+extension=iconv.so
+Salve, saia do arquivo e execute o seguinte comando:
+
+$ curl -s https://getcomposer.org/installer | php
+
+- Para instalar o php 8.3:
+$ sudo apt install php8.3
+
+- Para alterar a versão do php em uma máquina:
+$ sudo update-alternatives --set php /usr/bin/php7.4
+ou
+$ sudo update-alternatives --set php /usr/bin/php8.3
+
+- Para desinstalar uma versão do php:
+$ sudo apt remove --purge php7.4-cli
+
+- Para remover por completo a pasta:
+$ sudo rm -rf /etc/php/7.4
+$ sudo apt autoremove
+
+- Testando o php:
+$ sudo nano hello.php
+
+<?php
+echo 'Hello World!';
+?>
+
+$ php hello.php
