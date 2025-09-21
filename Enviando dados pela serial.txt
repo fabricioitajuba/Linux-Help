@@ -1,0 +1,4 @@
+Enviando dados pela serial do linux de forma simples:
+
+$ stty -F /dev/ttyUSB0 speed 9600 #Configura a serial
+$ echo "helloworld" >/dev/ttyUSB0 #Envia dados
