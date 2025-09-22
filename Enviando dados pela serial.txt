@@ -1,4 +1,19 @@
-Enviando dados pela serial do linux de forma simples:
+- Enviando dados pela serial do linux de forma simples:
 
 $ stty -F /dev/ttyUSB0 speed 9600 #Configura a serial
 $ echo "helloworld" >/dev/ttyUSB0 #Envia dados
+
+- Utilizando o minicom
+para instalar:
+$ sudo apt-get install minicom
+
+$ configurando:
+$ minicom -s
+
+Ex:
+$ minicom -b 115200 -D /dev/ttyUSB0
+
+Depois que o Minicom estiver em execução e conectado ao seu dispositivo serial, você pode simplesmente digitar a string desejada diretamente na janela do terminal Minicom. Os caracteres digitados serão enviados pela porta serial.
+
+Verificar o que está escrevendo: Ctrl-A e E
+Para sair: Ctrl-A e Q
