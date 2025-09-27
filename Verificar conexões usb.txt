@@ -1,0 +1,33 @@
+- Verifica as conexões:
+$ lsusb
+
+Ex:
+Bus 002 Device 005: ID 1a86:7523 QinHeng Electronics CH340 serial converter
+
+- Verifica a conexão do dispositivo:
+$sudo dmesg
+
+Ex:
+[ 2606.456312] usb 2-1.4: ch341-uart converter now attached to ttyUSB0
+
+- Exibir os dispositivos USB em formato de árvore:
+$ lsusb -t
+
+- Exibe dados muito detalhados sobre os dispositivo conectados:
+$ lsusb -v 
+
+- Exibe dados muito detalhados sobre um dispositivo específico:
+$ lsusb -v -s 002:005
+
+Os dispositivos ficam na pasta /dev
+
+- Para ver todos os dispotivos:
+$ ls /dev
+
+- Para ver todos os dispotivos tty:
+$ ls /dev/tty*
+
+O dispositivo do exemplo está na pasta /dev/ttyUSB0
+
+- Para habilitar o uso do dispotivo:
+$ sudo chmod 777 /dev/ttyUSB0
