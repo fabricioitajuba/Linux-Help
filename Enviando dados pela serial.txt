@@ -1,7 +1,9 @@
 - Enviando dados pela serial do linux de forma simples:
 
-$ stty -F /dev/ttyUSB0 speed 9600 #Configura a serial
+$ stty -F /dev/ttyUSB0 speed 115200 #Configura a serial
 $ echo "helloworld" >/dev/ttyUSB0 #Envia dados
+$ cat /dev/ttyUSB0 #Recebe dados
+$ cat < /dev/ttyUSB0 #Recebe dados
 
 - Utilizando o minicom
 para instalar:
