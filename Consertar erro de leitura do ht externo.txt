@@ -1,0 +1,4 @@
+
+sudo ntfsfix /dev/sdc1
+e
+sudo ntfsfix -d /dev/sdc1
