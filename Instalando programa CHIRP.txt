@@ -1,0 +1,29 @@
+Instalando programa CHIRP no ubuntu para rádios
+
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install python3-wxgtk4.0 pipx -y
+
+Entre no site:
+
+https://archive.chirpmyradio.com/chirp_next/next-20260109/
+
+baixe o arquivo com a extensão .whl
+
+Copie o nome do arquivo ex: chirp-20260109-py3-none-any.whl
+
+no terminal, vá para a pasta onde foi salvo o progra e digite a seguinte linha de comando:
+
+$ pipx install --system-site-packages ./"nome do arquivo"
+
+ex:
+$ pipx install --system-site-packages ./chirp-20260109-py3-none-any.whl
+
+após a instalação, digite a seguinte linha de comando:
+
+$ pipx ensurepath
+
+Para executar o programa: 
+$ ~/.local/bin/chirp
+
+um ícone do programa foi inserido junto com os programas
