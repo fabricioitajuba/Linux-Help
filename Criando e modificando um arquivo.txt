@@ -1,0 +1,37 @@
+- Criando um arquivo:
+$ touch teste.txt
+
+- Inserindo uma linha no arquivo criado:
+$ echo "Isso é um teste 1" >> teste.txt
+
+- Alterando uma string dentro do arquivo:
+$ sed -i 's/Isso é um teste 1/Isso é um teste 2/g' teste.txt
+
+
+# Exemplos Práticos
+
+Substituir "porta=80" por "porta=8080" no arquivo config.conf:
+
+$ sed -i 's/porta=80/porta=8080/g' config.conf
+
+Use o código com cuidado.
+
+# Substituir todas as ocorrências de "http" por "https" (mesmo que haja "/"):Se o texto contiver barras /, use outro delimitador, como # ou |, para evitar erros:
+
+$ sed -i 's#http#https#g' index.html
+
+# Criar um backup antes de alterar (segurança):
+
+$ sed -i.bak 's/antigo/novo/g' arquivo.txt
+
+Isso criará um arquivo arquivo.txt.bak antes de realizar a mudança.
+
+# Substituição em Múltiplos Arquivos
+Para alterar uma string em vários arquivos (ex: todos os .txt na pasta atual):
+
+$ sed -i 's/erro/aviso/g' *.txt
+
+Para buscar recursivamente em pastas e alterar:
+
+$ find . -type f -name "*.conf" -exec sed -i 's/debug=true/debug=false/g' {} +
+
