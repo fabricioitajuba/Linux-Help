@@ -1,0 +1,49 @@
+# Configurando o vscode no github
+
+- Instalar o git no computador;
+- Abra o navegador e entre na sua conta do github;
+- Abra o terminal e configure o user.name e user.email através dos comandos:
+
+$ git config --global user.name "Seu Nome Completo"
+$ git config --global user.email "seu-email-do-github@exemplo.com"
+
+- Clique no ícone de "Perfil ou Accounts" (ícone de bonequinho);
+- Escolha a opção Sign in with GitHub (Entrar com GitHub).
+- O navegador vai abrir pedindo autorização. Clique em Authorize Visual-Studio-Code.
+- Uma mensagem perguntará se deseja retornar ao editor. Confirme clicando em Abrir Visual Studio Code.
+
+
+# Clonando um repositório:
+
+- Pelo VSCODE
+
+- Copie o link HTTPS do repositório no GitHub (clique no botão verde Code e copie o endereço).
+- Abra o Visual Studio Code.
+- Pressione as teclas Ctrl + Shift + P para abrir a paleta de comandos.
+- Digite Git: Clone e selecione essa opção na lista.
+- Cole o URL do repositório que você copiado do GitHub e aperte Enter.
+- Escolha uma pasta no seu computador onde o projeto será salvo.
+- Clique em Open (Abrir) na notificação que aparece quando o processo terminar.
+
+- Pelo terminal:
+
+- Abra o github e copie o link do repositório (botão verde "Copy url to clipboard");
+- Abra o terminal e selecione o local onde será salvo o repositório;
+- digite o comando:
+
+$ git clone "Endereço copiado do repositório"
+
+- Abra o vscode e selecione a pasta do repositório clonado;
+
+
+# Fazendo um commit
+
+- Depois de fazer as alterações no projeto, pressione o botão "Source control" ou Ctrl+Shift+G;
+- No campo "Alterações ou Changes", coloque o nome da mudança;
+- Pressione "Confirmar ou Commit";
+- Pressione "Sincronizar Alterações ou Sync Changes";
+- Pressione "OK" e "Allow" nas próximas caixas de diálogo;
+- Selecione sua conta do github na caixa superior;
+
+# Fonte:
+https://www.youtube.com/watch?v=3-3gGSrWd00
