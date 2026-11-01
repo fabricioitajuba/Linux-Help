@@ -1,0 +1,82 @@
+1. Identificar o nome da sua interface Wi-Fi:
+
+Primeiro, você precisa saber o nome que o sistema atribuiu à sua placa de rede sem fio. 
+Execute o comando:
+
+$ ls /sys/class/net
+
+Geralmente, as interfaces Wi-Fi começam com wlan0 ou wlp (por exemplo, wlp2s0). Anote esse nome.
+ex: wlp6s0
+
+
+2. Localizar o arquivo de configuração do Netplan:
+
+Os arquivos de configuração ficam no diretório /etc/netplan/. Liste o conteúdo para ver o nome 
+exato do arquivo .yaml:
+
+$ ls /etc/netplan/
+
+O arquivo costuma se chamar algo como 00-installer-config.yaml ou 50-cloud-init.yaml.
+
+
+3. Editar o arquivo de configuração:
+
+Abra o arquivo com o editor de texto nano (substitua pelo nome correto do seu arquivo):
+
+$ sudo nano /etc/netplan/00-installer-config.yaml
+
+O arquivo YAML é extremamente sensível ao espaçamento (não use a tecla TAB, use espaços). 
+Altere ou adicione a seção wifis para que o arquivo fique estruturado exatamente assim:
+
+network:
+  version: 2
+  renderer: networkd
+  wifis:
+    NOME_DA_SUA_INTERFACE:
+      dhcp4: true
+      access-points:
+        "NOME_DA_SUA_REDE_WIFI":
+          password: "SUA_SENHA_DO_WIFI"
+
+ex:
+
+network:
+  version: 2
+  renderer: networkd
+  wifis:
+    wlp6s0:
+      dhcp4: true
+      access-points:
+        "Fabricio_2G":
+          password: "senha1"
+
+Substitua NOME_DA_SUA_INTERFACE (ex: wlp2s0), NOME_DA_SUA_REDE_WIFI e SUA_SENHA_DO_WIFI 
+pelos seus dados reais, mantendo as aspas no nome da rede e na senha.
+
+Para salvar no nano: pressione Ctrl + O, depois Enter. Para sair: Ctrl + X.
+
+
+4. Aplicar as configurações:
+
+Antes de aplicar permanentemente, teste a configuração para garantir que não há erros de sintaxe:
+
+$ sudo netplan try
+
+Se o comando não retornar erros e pedir para confirmar, pressione Enter. 
+Em seguida, aplique as mudanças de vez:
+
+$ sudo netplan apply
+
+
+5. Verificar a conexão
+
+Para garantir que o notebook recebeu um endereço IP e está conectado à internet, execute:
+
+$ ip a
+
+Veja se a sua interface sem fio agora exibe um IP válido. Você também pode testar a 
+comunicação externa com um ping:
+
+$ ping -c 3 google.com
+
+
