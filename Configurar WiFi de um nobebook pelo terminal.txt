@@ -85,4 +85,7 @@ comunicação externa com um ping:
 
 $ ping -c 3 google.com
 
+Para verificar qual placa está sendo usada de fato para navegar na internet, use o comando:
+
+$ ip route show default
 
