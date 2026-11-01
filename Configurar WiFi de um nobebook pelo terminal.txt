@@ -31,24 +31,30 @@ Altere ou adicione a seção wifis para que o arquivo fique estruturado exatamen
 network:
   version: 2
   renderer: networkd
+  ethernets:
+    NOME_DA_INTERFACE_CABO:
+      dhcp4: true
   wifis:
-    NOME_DA_SUA_INTERFACE:
+    NOME_DA_INTERFACE_WIFI:
       dhcp4: true
       access-points:
         "NOME_DA_SUA_REDE_WIFI":
           password: "SUA_SENHA_DO_WIFI"
-
 ex:
 
 network:
   version: 2
   renderer: networkd
+  ethernets:
+    NOME_DA_INTERFACE_CABO:
+      dhcp4: true
   wifis:
     wlp6s0:
       dhcp4: true
       access-points:
         "Fabricio_2G":
           password: "senha1"
+
 
 Substitua NOME_DA_SUA_INTERFACE (ex: wlp2s0), NOME_DA_SUA_REDE_WIFI e SUA_SENHA_DO_WIFI 
 pelos seus dados reais, mantendo as aspas no nome da rede e na senha.
